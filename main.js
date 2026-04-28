@@ -40,6 +40,19 @@ const ro = new IntersectionObserver(entries => {
 }, { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 
+// ── Cookie banner
+(function () {
+    if (localStorage.getItem('dvw-cookie')) return;
+    const b = document.createElement('div');
+    b.id = 'cookie-banner';
+    b.innerHTML = '<div class="cookie-header"><div class="cookie-icon-wrap">🍪</div><strong>Cookies & privacy</strong></div><p class="cookie-text">Wij gebruiken cookies om u de beste ervaring op onze website te bieden. Door verder te gaan gaat u akkoord met ons cookiegebruik.</p><div class="cookie-actions"><button class="cookie-accept" id="cookie-accept">Accepteren</button><button class="cookie-decline" id="cookie-decline">Weigeren</button></div>';
+    document.body.appendChild(b);
+    requestAnimationFrame(() => requestAnimationFrame(() => b.classList.add('visible')));
+    const dismiss = () => { b.classList.remove('visible'); setTimeout(() => b.remove(), 550); };
+    document.getElementById('cookie-accept').onclick = () => { localStorage.setItem('dvw-cookie', '1'); dismiss(); };
+    document.getElementById('cookie-decline').onclick = () => { localStorage.setItem('dvw-cookie', '0'); dismiss(); };
+})();
+
 // ── Animated counters
 const co = new IntersectionObserver(entries => {
     entries.forEach(e => {
