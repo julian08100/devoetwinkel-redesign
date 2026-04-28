@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alle schoenmerken bij De Voetwinkel Eindhoven. Berkemann, Finn Comfort, Mephisto, Ganter, Semler en nog 18 andere premium comfort schoenmerken.">
+    <title>Merken — De Voetwinkel Eindhoven</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='50' fill='%231A3329'/><text x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Georgia,serif' font-style='italic' font-weight='bold'>V</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .brand-grid-full {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 48px;
+        }
+        .brand-card {
+            background: var(--white);
+            border: 1px solid rgba(0,0,0,0.07);
+            border-radius: var(--r-lg);
+            padding: 32px 20px;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            gap: 16px;
+            transition: all 0.25s;
+            text-decoration: none; color: var(--dark);
+            min-height: 140px;
+        }
+        .brand-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.1); border-color: var(--green-pale); }
+        .brand-card img { max-width: 140px; max-height: 56px; object-fit: contain; }
+        .brand-card span { font-size: 14px; font-weight: 500; color: var(--gray); text-align: center; }
+        @media (max-width:600px) { .brand-grid-full { grid-template-columns: repeat(2, 1fr); } }
+    </style>
+</head>
+<body>
+<nav id="nav" class="solid">
+    <a href="index.html" class="nav-logo">De <span>Voet</span>winkel</a>
+    <ul class="nav-links">
+        <li class="has-drop"><a href="merken.html" class="active">Schoenen</a><ul class="dropdown"><li><a href="merken.html">Alle merken</a></li><li><a href="wandelschoenen.html">Wandelschoenen</a></li><li><a href="sokken.html">Sokken</a></li></ul></li>
+        <li><a href="voetverzorging.html">Voetverzorging</a></li>
+        <li class="has-drop"><a href="podoloog.html">Podoloog</a><ul class="dropdown"><li><a href="podoloog.html">Over de podoloog</a></li><li><a href="gratis-voetscandag.html">Gratis voetscandag</a></li></ul></li>
+        <li class="has-drop"><a href="#">Info</a><ul class="dropdown"><li><a href="tarieven.html">Tarieven</a></li><li><a href="openingstijden.html">Openingstijden</a></li><li><a href="route.html">Route</a></li><li><a href="wandelwol.html">WandelWol</a></li><li><a href="historie.html">Historie</a></li><li><a href="vacatures.html">Vacatures</a></li></ul></li>
+        <li><a href="tel:0408446452" class="nav-cta">Afspraak maken</a></li>
+    </ul>
+    <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-overlay" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose">×</button>
+    <div class="mob-section"><a href="index.html" class="mob-link">Home</a></div>
+    <div class="mob-section"><div class="mob-section-title">Schoenen</div><div class="mob-sublinks"><a href="merken.html" class="mob-sublink">Alle merken</a><a href="wandelschoenen.html" class="mob-sublink">Wandelschoenen</a><a href="sokken.html" class="mob-sublink">Sokken</a></div></div>
+    <div class="mob-section"><a href="voetverzorging.html" class="mob-link">Voetverzorging</a></div>
+    <div class="mob-section"><a href="podoloog.html" class="mob-link">Podoloog</a><div class="mob-sublinks"><a href="gratis-voetscandag.html" class="mob-sublink">Gratis voetscandag</a></div></div>
+    <div class="mob-section"><div class="mob-section-title">Info</div><div class="mob-sublinks"><a href="tarieven.html" class="mob-sublink">Tarieven</a><a href="openingstijden.html" class="mob-sublink">Openingstijden</a><a href="route.html" class="mob-sublink">Route</a><a href="wandelwol.html" class="mob-sublink">WandelWol</a><a href="historie.html" class="mob-sublink">Historie</a><a href="vacatures.html" class="mob-sublink">Vacatures</a></div></div>
+    <a href="tel:0408446452" class="mob-cta">Afspraak maken</a>
+</div>
+
+<div class="page-hero">
+    <div class="page-hero-inner">
+        <div class="page-breadcrumb"><a href="index.html">Home</a><span>/</span>Merken</div>
+        <h1 class="page-title">Onze Merken</h1>
+        <p class="page-subtitle">23 premium comfort schoenmerken met bewezen kwaliteit. In alle breedtematen, voor iedere voet — ook de meest gevoelige.</p>
+    </div>
+</div>
+
+<section class="section">
+    <div style="max-width:680px;" class="reveal">
+        <div class="sec-label">Comfort & kwaliteit</div>
+        <h2 class="sec-title">Merken die het verschil maken</h2>
+        <p class="sec-sub">Al onze merken zijn zorgvuldig geselecteerd op comfort, kwaliteit en pasvorm. Elk merk biedt een ruime keuze aan breedtematen, zodat er voor iedereen de perfecte schoen is.</p>
+    </div>
+
+    <div class="brand-grid-full reveal">
+        <div class="brand-card">
+            <img src="https://devoetwinkel.nl/wp-content/uploads/2022/08/Berkemann.jpg" alt="Berkemann">
+            <span>Berkemann</span>
+        </div>
+        <div class="brand-card">
+            <img src="https://devoetwinkel.nl/wp-content/uploads/2022/08/Finn-comfort.jpg" alt="Finn Comfort">
+            <span>Finn Comfort</span>
+        </div>
+        <div class="brand-card">
+            <img src="https://devoetwinkel.nl/wp-content/uploads/2022/08/Ganter.jpg" alt="Ganter">
+            <span>Ganter</span>
+        </div>
+        <div class="brand-card">
+            <img src="https://devoetwinkel.nl/wp-content/uploads/2022/08/Gijs.jpg" alt="Gijs">
+            <span>Gijs</span>
+        </div>
+        <div class="brand-card">
+            <img src="https://devoetwinkel.nl/wp-content/uploads/2022/08/Hartjes.jpg" alt="Hartjes">
+            <span>Hartjes</span>
+        </div>
+        <div class="brand-card">
+            <img src="https://devoetwinkel.nl/wp-content/uploads/2022/08/Hassia.jpg" alt="Hassia">
+            <span>Hassia</span>
+        </div>
+        <div class="brand-card">
+            <img src="https://devoetwinkel.nl/wp-content/uploads/2022/08/Semler.jpg" alt="Semler">
+            <span>Semler</span>
+        </div>
+        <div class="brand-card">
+            <img src="https://devoetwinkel.nl/wp-content/uploads/2022/08/Solidus.jpg" alt="Solidus">
+            <span>Solidus</span>
+        </div>
+        <div class="brand-card">
+            <img src="https://devoetwinkel.nl/wp-content/uploads/2022/09/fidelio.png" alt="Fidelio">
+            <span>Fidelio</span>
+        </div>
+        <div class="brand-card">
+            <img src="https://devoetwinkel.nl/wp-content/uploads/2022/09/memphisto.png" alt="Mephisto">
+            <span>Mephisto</span>
+        </div>
+        <div class="brand-card">
+            <img src="https://devoetwinkel.nl/wp-content/uploads/2024/03/logo-nimco.png" alt="Nimco">
+            <span>Nimco</span>
+        </div>
+        <div class="brand-card">
+            <img src="https://devoetwinkel.nl/wp-content/uploads/2022/09/Xsensible.png" alt="Xsensible">
+            <span>Xsensible</span>
+        </div>
+        <div class="brand-card">
+            <img src="https://devoetwinkel.nl/wp-content/uploads/2022/09/Dietz.png" alt="Christian Dietz">
+            <span>Christian Dietz</span>
+        </div>
+        <div class="brand-card">
+            <img src="https://devoetwinkel.nl/wp-content/uploads/2022/09/Oofos.png" alt="OOfos">
+            <span>OOfos slippers</span>
+        </div>
+        <div class="brand-card">
+            <img src="https://devoetwinkel.nl/wp-content/uploads/2022/09/promed.png" alt="Promed">
+            <span>Promed verbandschoenen</span>
+        </div>
+        <div class="brand-card">
+            <img src="https://devoetwinkel.nl/wp-content/uploads/2022/08/Rohde.jpg" alt="Rohde">
+            <span>Rohde pantoffels</span>
+        </div>
+        <div class="brand-card">
+            <img src="https://devoetwinkel.nl/wp-content/uploads/2022/08/Strober.jpg" alt="Ströber">
+            <span>Ströber</span>
+        </div>
+        <div class="brand-card">
+            <img src="https://devoetwinkel.nl/wp-content/uploads/2022/09/durea.png" alt="Durea">
+            <span>Durea</span>
+        </div>
+        <div class="brand-card">
+            <img src="https://devoetwinkel.nl/wp-content/uploads/2022/09/Stuppy-1.png" alt="Stuppy">
+            <span>Stuppy</span>
+        </div>
+        <div class="brand-card">
+            <img src="https://devoetwinkel.nl/wp-content/uploads/2026/02/svgviewer-png-output.png" alt="Scholl">
+            <span>Scholl</span>
+        </div>
+        <div class="brand-card">
+            <img src="https://devoetwinkel.nl/wp-content/uploads/2023/12/image001-1-e1702391507363.jpg" alt="Schneider">
+            <span>Schneider</span>
+        </div>
+        <div class="brand-card">
+            <img src="https://devoetwinkel.nl/wp-content/uploads/2022/08/Schermafbeelding-2022-08-31-om-11.35.37.png" alt="Meindl">
+            <span>Meindl</span>
+        </div>
+        <div class="brand-card" style="background:var(--cream);">
+            <div style="font-family:var(--serif);font-size:18px;font-weight:700;color:var(--green-deep);">Verhulst</div>
+            <span>Verhulst</span>
+        </div>
+    </div>
+</section>
+
+<section class="section section-muted">
+    <div style="max-width:640px;margin:0 auto;text-align:center;" class="reveal">
+        <div class="sec-label">Breedtematen</div>
+        <h2 class="sec-title">Voor de breedste én smalste voet</h2>
+        <p class="sec-sub">Wij voeren alle breedtematen: 10 damesbreedtes (C t/m M) en 6 herrenbreedtes (G t/m N). Ook voor orthopedisch aanbevolen schoeisel bij diabetes en reuma.</p>
+    </div>
+</section>
+
+<div class="cta-strip">
+    <div class="cta-inner">
+        <h2 class="cta-title">Laat u adviseren</h2>
+        <p class="cta-sub">Onze specialisten helpen u graag de juiste schoen te vinden. Kom langs voor een gratis voetmeting en persoonlijk advies.</p>
+        <div class="cta-btns">
+            <a href="tel:0408446452" class="btn btn-white">Bel: 040-8446452</a>
+            <a href="route.html" class="btn btn-outline-w">Hoe kom ik er? →</a>
+        </div>
+    </div>
+</div>
+
+<footer><div class="footer-grid"><div><a href="index.html" class="footer-logo">De <span>Voet</span>winkel</a><p class="footer-desc">Specialist in comfort schoenen, pedicure en podologie in Eindhoven.</p><p class="footer-address">Tarwelaan 60, 5632 KG Eindhoven</p><div class="socials"><a href="https://www.instagram.com/devoetwinkeleindhoven/" class="soc-btn" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a><a href="https://www.facebook.com/devoetwinkel" class="soc-btn" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a></div></div><div class="footer-col"><h4>Schoenen</h4><ul class="footer-links"><li><a href="merken.html">Alle merken</a></li><li><a href="wandelschoenen.html">Wandelschoenen</a></li><li><a href="sokken.html">Sokken</a></li><li><a href="wandelwol.html">WandelWol</a></li></ul></div><div class="footer-col"><h4>Diensten</h4><ul class="footer-links"><li><a href="voetverzorging.html">Voetverzorging</a></li><li><a href="podoloog.html">Podoloog</a></li><li><a href="tarieven.html">Tarieven</a></li><li><a href="gratis-voetscandag.html">Gratis voetscandag</a></li></ul></div><div class="footer-col"><h4>Contact</h4><ul class="footer-links"><li>Tarwelaan 60</li><li>5632 KG Eindhoven</li><li><a href="tel:0408446452">040-8446452</a></li><li><a href="mailto:info@devoetwinkel.nl">info@devoetwinkel.nl</a></li><li style="margin-top:8px">Ma: 11:00–18:00</li><li>Di–Vr: 9:30–18:00</li><li>Za: 9:30–17:00</li></ul></div></div><div class="footer-bottom"><p>© 2026 De Voetwinkel Eindhoven. Alle rechten voorbehouden.</p></div></footer>
+<script src="main.js"></script>
+</body>
+</html>
