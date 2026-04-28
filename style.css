@@ -615,6 +615,54 @@ footer {
     flex-wrap: wrap; gap: 12px;
 }
 .footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.28); }
+.footer-privacy { font-size: 13px; color: rgba(255,255,255,0.28); text-decoration: none; transition: color 0.2s; }
+.footer-privacy:hover { color: rgba(255,255,255,0.6); }
+
+/* ── VOETSCANDAG BANNER ── */
+#scandag-banner {
+    position: fixed; top: var(--nav-h); left: 0; right: 0;
+    z-index: 900;
+    background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 100%);
+    color: var(--white);
+    padding: 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.5s cubic-bezier(0.16,1,0.3,1), opacity 0.4s;
+    box-shadow: 0 4px 24px rgba(26,51,41,0.35);
+}
+#scandag-banner.visible { transform: translateY(0); opacity: 1; }
+.scandag-inner {
+    max-width: 900px; margin: 0 auto;
+    padding: 14px 52px;
+    display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+}
+.scandag-icon {
+    font-size: 22px; flex-shrink: 0;
+}
+.scandag-text {
+    flex: 1; font-size: 14px; line-height: 1.5;
+}
+.scandag-text strong { font-size: 14.5px; font-weight: 600; }
+.scandag-text span { opacity: 0.8; margin-left: 6px; }
+.scandag-cta {
+    background: rgba(255,255,255,0.15); color: var(--white);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 8px 18px; border-radius: 100px;
+    font-size: 13px; font-weight: 600;
+    text-decoration: none; white-space: nowrap; flex-shrink: 0;
+    transition: background 0.2s, border-color 0.2s;
+}
+.scandag-cta:hover { background: rgba(255,255,255,0.25); border-color: rgba(255,255,255,0.55); }
+.scandag-close {
+    background: none; border: none; color: rgba(255,255,255,0.5);
+    font-size: 20px; cursor: pointer; padding: 4px 8px; flex-shrink: 0;
+    line-height: 1; transition: color 0.2s;
+}
+.scandag-close:hover { color: var(--white); }
+@media (max-width: 600px) {
+    .scandag-inner { padding: 12px 20px; gap: 12px; }
+    .scandag-text span { display: none; }
+}
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1100px) {
@@ -645,9 +693,9 @@ footer {
 
 /* ── LOGO IMAGE ── */
 .nav-logo { display: flex; align-items: center; }
-.nav-logo-img { height: 40px; width: auto; display: block; }
+.nav-logo-img { height: 48px; width: auto; display: block; }
 .footer-logo { display: flex; align-items: center; }
-.footer-logo-img { height: 40px; width: auto; display: block; filter: brightness(0) invert(1); opacity: 0.9; }
+.footer-logo-img { height: 48px; width: auto; display: block; filter: brightness(0) invert(1); opacity: 0.9; }
 
 /* ── COOKIE BANNER ── */
 #cookie-banner {
