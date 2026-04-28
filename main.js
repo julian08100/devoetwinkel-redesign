@@ -42,30 +42,30 @@ document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 
 // ── Voetscandag announcement banner
 (function () {
-    if (sessionStorage.getItem('scandag-dismissed')) return;
+    if (sessionStorage.getItem('scandag-v3')) return;
     const b = document.createElement('div');
     b.id = 'scandag-banner';
     b.innerHTML = '<div class="scandag-inner"><div class="scandag-icon">📅</div><div class="scandag-text"><strong>Gratis voetscandag</strong><span>Kom langs op 21 mei of 18 juni 2026 — geen afspraak nodig</span></div><a href="gratis-voetscandag.html" class="scandag-cta">Meer info →</a><button class="scandag-close" id="scandag-close" aria-label="Sluiten">×</button></div>';
     document.body.appendChild(b);
-    requestAnimationFrame(() => requestAnimationFrame(() => b.classList.add('visible')));
+    setTimeout(() => b.classList.add('visible'), 800);
     document.getElementById('scandag-close').onclick = () => {
         b.classList.remove('visible');
-        sessionStorage.setItem('scandag-dismissed', '1');
+        sessionStorage.setItem('scandag-v3', '1');
         setTimeout(() => b.remove(), 500);
     };
 })();
 
 // ── Cookie banner
 (function () {
-    if (localStorage.getItem('dvw-cookie')) return;
+    if (localStorage.getItem('dvw-cookie-v2')) return;
     const b = document.createElement('div');
     b.id = 'cookie-banner';
     b.innerHTML = '<div class="cookie-header"><div class="cookie-icon-wrap">🍪</div><strong>Cookies & privacy</strong></div><p class="cookie-text">Wij gebruiken cookies om u de beste ervaring op onze website te bieden. Door verder te gaan gaat u akkoord met ons cookiegebruik.</p><div class="cookie-actions"><button class="cookie-accept" id="cookie-accept">Accepteren</button><button class="cookie-decline" id="cookie-decline">Weigeren</button></div>';
     document.body.appendChild(b);
-    requestAnimationFrame(() => requestAnimationFrame(() => b.classList.add('visible')));
+    setTimeout(() => b.classList.add('visible'), 1400);
     const dismiss = () => { b.classList.remove('visible'); setTimeout(() => b.remove(), 550); };
-    document.getElementById('cookie-accept').onclick = () => { localStorage.setItem('dvw-cookie', '1'); dismiss(); };
-    document.getElementById('cookie-decline').onclick = () => { localStorage.setItem('dvw-cookie', '0'); dismiss(); };
+    document.getElementById('cookie-accept').onclick = () => { localStorage.setItem('dvw-cookie-v2', '1'); dismiss(); };
+    document.getElementById('cookie-decline').onclick = () => { localStorage.setItem('dvw-cookie-v2', '0'); dismiss(); };
 })();
 
 // ── Animated counters
