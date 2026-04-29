@@ -693,9 +693,9 @@ footer {
 
 /* ── LOGO IMAGE ── */
 .nav-logo { display: flex; align-items: center; }
-.nav-logo-img { height: 58px; width: auto; display: block; }
+.nav-logo-img { height: 76px; width: auto; display: block; }
 .footer-logo { display: flex; align-items: center; }
-.footer-logo-img { height: 58px; width: auto; display: block; filter: brightness(0) invert(1); opacity: 0.9; }
+.footer-logo-img { height: 76px; width: auto; display: block; filter: brightness(0) invert(1); opacity: 0.9; }
 
 /* ── COOKIE BANNER ── */
 #cookie-banner {
@@ -738,5 +738,30 @@ footer {
 @media (max-width: 480px) {
     #cookie-banner { left: 16px; right: 16px; bottom: 16px; max-width: 100%; }
 }
+
+/* ── PRODUCT GRID ── */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+}
+.product-item {
+    background: var(--white);
+    border: 1px solid rgba(0,0,0,0.07);
+    border-radius: var(--r);
+    overflow: hidden;
+    aspect-ratio: 1;
+    display: flex; align-items: center; justify-content: center;
+}
+.product-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 12px;
+    transition: transform 0.3s;
+}
+.product-item:hover img { transform: scale(1.04); }
+@media (max-width:600px) { .product-grid { grid-template-columns: repeat(2, 1fr); } }
 
 /* ── SHARED NAV JS HOOK ── */
