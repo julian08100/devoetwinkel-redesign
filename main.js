@@ -50,7 +50,7 @@ document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
     if (sessionStorage.getItem('scandag-v4')) return;
     const b = document.createElement('div');
     b.id = 'scandag-banner';
-    b.innerHTML = '<div class="scandag-inner"><div class="scandag-icon">📅</div><div class="scandag-text"><strong>Gratis voetscandag</strong><span>Kom langs op ' + eventLabel + ' — geen afspraak nodig</span></div><a href="gratis-voetscandag.html" class="scandag-cta">Meer info →</a><button class="scandag-close" id="scandag-close" aria-label="Sluiten">×</button></div>';
+    b.innerHTML = '<div class="scandag-inner"><div class="scandag-icon">📅</div><div class="scandag-text"><strong>Gratis voetscandag</strong><span>' + eventLabel + ' — op afspraak, bel 040-8446452</span></div><a href="gratis-voetscandag.html" class="scandag-cta">Meer info →</a><button class="scandag-close" id="scandag-close" aria-label="Sluiten">×</button></div>';
     document.body.appendChild(b);
     setTimeout(() => b.classList.add('visible'), 800);
     document.getElementById('scandag-close').onclick = () => {
