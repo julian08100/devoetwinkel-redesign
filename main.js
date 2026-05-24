@@ -42,15 +42,15 @@ document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 
 // ── Voetscandag announcement banner
 (function () {
-    if (sessionStorage.getItem('scandag-v3')) return;
+    if (sessionStorage.getItem('scandag-v4')) return;
     const b = document.createElement('div');
     b.id = 'scandag-banner';
-    b.innerHTML = '<div class="scandag-inner"><div class="scandag-icon">📅</div><div class="scandag-text"><strong>Gratis voetscandag</strong><span>Kom langs op 21 mei of 18 juni 2026 — geen afspraak nodig</span></div><a href="gratis-voetscandag.html" class="scandag-cta">Meer info →</a><button class="scandag-close" id="scandag-close" aria-label="Sluiten">×</button></div>';
+    b.innerHTML = '<div class="scandag-inner"><div class="scandag-icon">📅</div><div class="scandag-text"><strong>Gratis voetscandag</strong><span>Kom langs op donderdag 18 juni 2026 — geen afspraak nodig</span></div><a href="gratis-voetscandag.html" class="scandag-cta">Meer info →</a><button class="scandag-close" id="scandag-close" aria-label="Sluiten">×</button></div>';
     document.body.appendChild(b);
     setTimeout(() => b.classList.add('visible'), 800);
     document.getElementById('scandag-close').onclick = () => {
         b.classList.remove('visible');
-        sessionStorage.setItem('scandag-v3', '1');
+        sessionStorage.setItem('scandag-v4', '1');
         setTimeout(() => b.remove(), 500);
     };
 })();
