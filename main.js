@@ -43,11 +43,11 @@ document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 // ── Voetscandag announcement banner
 // Update the date below when a new voetscandag is announced — the banner hides itself after this date.
 (function () {
-    const eventDate = '2026-06-18'; // YYYY-MM-DD — banner hides the day after this date
-    const eventLabel = 'donderdag 18 juni 2026';
+    const eventDate = '2026-08-20'; // YYYY-MM-DD — banner hides the day after this date
+    const eventLabel = 'donderdag 20 augustus 2026';
     const today = new Date().toISOString().slice(0, 10);
     if (today > eventDate) return;
-    if (sessionStorage.getItem('scandag-v4')) return;
+    if (sessionStorage.getItem('scandag-v5')) return;
     const b = document.createElement('div');
     b.id = 'scandag-banner';
     b.innerHTML = '<div class="scandag-inner"><div class="scandag-icon">📅</div><div class="scandag-text"><strong>Gratis voetscandag</strong><span>' + eventLabel + ' — op afspraak, bel 040-8446452</span></div><a href="gratis-voetscandag.html" class="scandag-cta">Meer info →</a><button class="scandag-close" id="scandag-close" aria-label="Sluiten">×</button></div>';
@@ -55,7 +55,7 @@ document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
     setTimeout(() => b.classList.add('visible'), 800);
     document.getElementById('scandag-close').onclick = () => {
         b.classList.remove('visible');
-        sessionStorage.setItem('scandag-v4', '1');
+        sessionStorage.setItem('scandag-v5', '1');
         setTimeout(() => b.remove(), 500);
     };
 })();
