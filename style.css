@@ -126,6 +126,9 @@ nav.solid { background: var(--cream); box-shadow: 0 1px 0 rgba(0,0,0,0.07); }
 }
 .nav-cta:hover { background: var(--green-mid) !important; }
 
+/* mobile-only appointment button (hidden on desktop, shown next to hamburger on mobile) */
+.nav-cta-mob { display: none; }
+
 /* hamburger */
 .hamburger {
     display: none; flex-direction: column; gap: 5px;
@@ -673,6 +676,13 @@ footer {
     nav { padding: 0 28px; }
     .nav-links { display: none; }
     .hamburger { display: flex; }
+    .nav-logo { margin-right: auto; }
+    .nav-cta-mob {
+        display: inline-flex; align-items: center;
+        margin-left: 0; margin-right: 14px;
+        text-decoration: none;
+        flex-shrink: 0;
+    }
     .section, .section-sm { padding: 72px 28px; }
     .cta-strip { padding: 80px 28px; }
     .page-hero { padding: calc(var(--nav-h) + 48px) 28px 48px; }
