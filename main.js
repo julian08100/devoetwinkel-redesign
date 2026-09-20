@@ -60,17 +60,45 @@ document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
     };
 })();
 
-// ── Cookie banner
+// ── Cookie banner (gekoppeld aan Google Consent Mode)
 (function () {
-    if (localStorage.getItem('dvw-cookie-v2')) return;
+    const KEUZE = 'dvw-cookie-v2';
+    const lees = () => { try { return localStorage.getItem(KEUZE); } catch (e) { return null; } };
+    const schrijf = v => { try { localStorage.setItem(KEUZE, v); } catch (e) {} };
+
+    // Geef de keuze door aan GTM. Weigeren betekent ook echt weigeren:
+    // analytics- en advertentiecookies blijven dan op 'denied' staan.
+    const meldConsent = toegestaan => {
+        if (typeof gtag !== 'function') return;
+        const stand = toegestaan ? 'granted' : 'denied';
+        gtag('consent', 'update', {
+            'ad_storage': stand,
+            'ad_user_data': stand,
+            'ad_personalization': stand,
+            'analytics_storage': stand
+        });
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: toegestaan ? 'cookie_accepted' : 'cookie_declined' });
+    };
+
+    if (lees() !== null) { meldConsent(lees() === '1'); return; }
+
     const b = document.createElement('div');
     b.id = 'cookie-banner';
-    b.innerHTML = '<div class="cookie-header"><div class="cookie-icon-wrap">🍪</div><strong>Cookies & privacy</strong></div><p class="cookie-text">Wij gebruiken cookies om u de beste ervaring op onze website te bieden. Door verder te gaan gaat u akkoord met ons cookiegebruik.</p><div class="cookie-actions"><button class="cookie-accept" id="cookie-accept">Accepteren</button><button class="cookie-decline" id="cookie-decline">Weigeren</button></div>';
+    b.setAttribute('role', 'dialog');
+    b.setAttribute('aria-label', 'Cookievoorkeuren');
+    b.innerHTML = '<div class="cookie-header"><div class="cookie-icon-wrap">\u{1F36A}</div><strong>Cookies &amp; privacy</strong></div>'
+        + '<p class="cookie-text">Wij gebruiken cookies om onze website te verbeteren en ons verkeer te analyseren. '
+        + 'Weigert u, dan plaatsen wij alleen de cookies die nodig zijn om de site te laten werken. '
+        + '<a href="privacy-policy.html">Lees ons privacybeleid</a>.</p>'
+        + '<div class="cookie-actions"><button class="cookie-accept" id="cookie-accept">Accepteren</button>'
+        + '<button class="cookie-decline" id="cookie-decline">Weigeren</button></div>';
     document.body.appendChild(b);
     setTimeout(() => b.classList.add('visible'), 1400);
-    const dismiss = () => { b.classList.remove('visible'); setTimeout(() => b.remove(), 550); };
-    document.getElementById('cookie-accept').onclick = () => { localStorage.setItem('dvw-cookie-v2', '1'); dismiss(); };
-    document.getElementById('cookie-decline').onclick = () => { localStorage.setItem('dvw-cookie-v2', '0'); dismiss(); };
+
+    const sluit = () => { b.classList.remove('visible'); setTimeout(() => b.remove(), 550); };
+    document.getElementById('cookie-accept').onclick = () => { schrijf('1'); meldConsent(true); sluit(); };
+    document.getElementById('cookie-decline').onclick = () => { schrijf('0'); meldConsent(false); sluit(); };
 })();
 
 // ── Animated counters

@@ -5,10 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="De Voetwinkel Eindhoven — Specialist in comfort schoenen, pedicure en podologie. 22 merken, 16 breedtematen, persoonlijk advies op Tarwelaan 60.">
     <title>De Voetwinkel Eindhoven — Comfort Schoenen & Voetverzorging</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='50' fill='%231A3329'/><text x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Georgia,serif' font-style='italic' font-weight='bold'>V</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='50' fill='%2316130F'/><text x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Georgia,serif' font-style='italic' font-weight='bold'>V</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Consent Mode: alles standaard geweigerd tot de bezoeker toestemming geeft -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied',
+        'functionality_storage': 'granted',
+        'security_storage': 'granted',
+        'wait_for_update': 500
+      });
+      try {
+        if (localStorage.getItem('dvw-cookie-v2') === '1') {
+          gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted',
+            'analytics_storage': 'granted'
+          });
+        }
+      } catch (e) {}
+    </script>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PNNGPJ2');</script>
     <!-- End Google Tag Manager -->
@@ -94,17 +118,17 @@
         .hero-glow {
             position: absolute; top: 0; right: 0;
             width: 60%; height: 100%;
-            background: radial-gradient(ellipse at 70% 50%, rgba(200,221,213,0.45) 0%, transparent 65%);
+            background: radial-gradient(ellipse at 70% 50%, rgba(216,205,188,0.55) 0%, transparent 65%);
             pointer-events: none;
         }
         .hero-content { position: relative; z-index: 3; max-width: 560px; }
         .hero-badge {
             display: inline-flex; align-items: center; gap: 8px;
-            background: var(--green-deep); color: var(--white);
+            background: var(--ink); color: var(--white);
             padding: 8px 18px; border-radius: 100px;
             font-size: 13px; font-weight: 500; margin-bottom: 32px;
         }
-        .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--copper-lt); }
+        .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--taupe-lt); }
         h1 {
             font-family: var(--serif);
             font-size: clamp(48px, 6vw, 80px);
@@ -112,7 +136,7 @@
             letter-spacing: -2px; color: var(--dark);
             margin-bottom: 24px;
         }
-        h1 em { font-style: italic; color: var(--green-mid); }
+        h1 em { font-style: italic; color: var(--ink-soft); }
         .hero-sub {
             font-size: 18px; color: var(--gray);
             line-height: 1.75; margin-bottom: 40px; max-width: 440px;
@@ -141,9 +165,9 @@
         .hero-copper-ball {
             position: absolute; width: 100px; height: 100px;
             border-radius: 50%;
-            background: radial-gradient(circle at 35% 35%, var(--copper-lt), var(--copper));
+            background: radial-gradient(circle at 35% 35%, var(--taupe-lt), var(--taupe));
             top: -16px; right: -16px; z-index: 5;
-            box-shadow: 0 12px 40px rgba(196,112,74,0.4);
+            box-shadow: 0 12px 40px rgba(138,122,100,0.45);
         }
         .hero-stat-pill {
             position: absolute;
@@ -160,7 +184,7 @@
             0%,100% { transform: translateY(0); }
             50% { transform: translateY(-8px); }
         }
-        .pill-num { font-family: var(--serif); font-size: 22px; font-weight: 700; color: var(--green-deep); line-height: 1; }
+        .pill-num { font-family: var(--serif); font-size: 22px; font-weight: 700; color: var(--ink); line-height: 1; }
         .pill-lbl { font-size: 12px; color: var(--gray); font-weight: 500; line-height: 1.3; max-width: 70px; }
 
         .scroll-hint {
@@ -176,7 +200,7 @@
         }
 
         /* ── SERVICES ── */
-        #services { background: var(--green-deep); }
+        #services { background: var(--ink); }
         .svc-header { max-width: 580px; margin-bottom: 60px; }
         .svc-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
         .svc-card { border-radius: var(--r-lg); overflow: hidden; transition: transform 0.3s; }
@@ -192,7 +216,7 @@
         }
         .svc-name { font-family: var(--serif); font-size: 21px; font-weight: 600; color: var(--white); margin-bottom: 10px; }
         .svc-desc { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; }
-        .svc-link { display: inline-flex; align-items: center; gap: 6px; color: var(--copper-lt); font-size: 13px; font-weight: 600; text-decoration: none; margin-top: 14px; transition: gap 0.2s; }
+        .svc-link { display: inline-flex; align-items: center; gap: 6px; color: var(--taupe-lt); font-size: 13px; font-weight: 600; text-decoration: none; margin-top: 14px; transition: gap 0.2s; }
         .svc-link:hover { gap: 10px; }
 
         /* ── ABOUT ── */
@@ -222,7 +246,7 @@
         #pedicure-strip img { width:100%; height:100%; object-fit:cover; }
         .pedicure-overlay {
             position: absolute; inset: 0;
-            background: linear-gradient(to right, rgba(26,51,41,0.8) 0%, transparent 60%);
+            background: linear-gradient(to right, rgba(22,19,15,0.82) 0%, transparent 60%);
             display: flex; align-items: center; padding: 0 72px;
         }
         .pedicure-overlay-content { max-width: 480px; }
@@ -251,28 +275,6 @@
         .logo-item img { max-height: 40px; max-width: 120px; object-fit: contain; filter: grayscale(1); opacity: 0.5; transition: all 0.25s; }
         .logo-item:hover img { filter: grayscale(0); opacity: 1; }
 
-        /* ── USPs ── */
-        #usps { background: var(--cream); }
-        .usps-header { text-align: center; max-width: 580px; margin: 0 auto 60px; }
-        .usp-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
-
-        /* ── PROCESS ── */
-        #process { background: var(--cream-dark); }
-        .process-header { max-width: 500px; margin-bottom: 64px; }
-        .steps { display: grid; grid-template-columns: repeat(5,1fr); position: relative; }
-        .steps::before { content: ''; position: absolute; top:27px; left:12%; right:12%; height:1px; background: rgba(0,0,0,0.1); }
-        .step { display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; z-index:1; padding: 0 12px; }
-        .step-num {
-            width:56px; height:56px; border-radius:50%;
-            background: var(--white); border: 1.5px solid var(--cream-dark);
-            display: flex; align-items:center; justify-content:center;
-            font-family: var(--serif); font-size:20px; font-weight:700; color: var(--green-deep);
-            margin-bottom:20px; transition: all 0.3s;
-        }
-        .step:hover .step-num { background: var(--green-deep); color: var(--white); border-color: var(--green-deep); transform: scale(1.08); }
-        .step-title { font-weight:600; font-size:15px; margin-bottom:8px; }
-        .step-desc { font-size:13.5px; color:var(--gray); line-height:1.65; }
-
         @media (max-width: 1100px) {
             .svc-grid { grid-template-columns: repeat(2,1fr); }
             .hero-visual { display: none; }
@@ -283,14 +285,10 @@
         @media (max-width: 900px) {
             #hero { padding: calc(var(--nav-h) + 40px) 28px 60px; }
             #about { grid-template-columns: 1fr; gap: 40px; padding: 72px 28px; }
-            .steps { grid-template-columns: repeat(3,1fr); gap: 32px; row-gap: 40px; }
-            .steps::before { display: none; }
-            .usp-grid { grid-template-columns: repeat(2,1fr); }
         }
         @media (max-width: 600px) {
             h1 { font-size: 44px; letter-spacing: -1.5px; }
-            .svc-grid, .usp-grid { grid-template-columns: 1fr; }
-            .steps { grid-template-columns: 1fr 1fr; }
+            .svc-grid { grid-template-columns: 1fr; }
             .hero-stats { gap: 24px; }
             #pedicure-strip { height: 280px; }
             .pedicure-overlay { padding: 0 28px; }
@@ -462,7 +460,7 @@
             </div>
         </div>
         <div class="svc-card reveal d3">
-            <div class="svc-photo" style="background:var(--green-mid); display:flex; align-items:center; justify-content:center;">
+            <div class="svc-photo" style="background:var(--ink-soft); display:flex; align-items:center; justify-content:center;">
                 <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
             </div>
             <div class="svc-body">
@@ -575,61 +573,6 @@
         <a href="wandelschoenen.html" class="btn btn-primary" style="margin-top:32px;">Bekijk wandelschoenen →</a>
     </div>
 </div>
-
-<!-- ─── USPs (DESIRE) ─── -->
-<section id="usps" class="section">
-    <div class="usps-header reveal">
-        <div class="sec-label">Waarom wij?</div>
-        <h2 class="sec-title">Jouw voeten verdienen het allerbeste</h2>
-        <p class="sec-sub">Vakmanschap, het breedste aanbod en écht persoonlijk advies — nergens in de regio Eindhoven krijg je dit onder één dak.</p>
-    </div>
-    <div class="usp-grid">
-        <div class="card reveal">
-            <div class="icon-box icon-box-light">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 21H3M21 3H3M16 12H8M19 7.5H5M19 16.5H5"/></svg>
-            </div>
-            <h3 style="font-family:var(--serif);font-size:21px;font-weight:600;margin-bottom:10px;">16 breedtematen</h3>
-            <p style="font-size:14.5px;color:var(--gray);line-height:1.75;">10 damesbreedtes (C–M) en 6 herrenbreedtes (G–N). Jouw voet, jouw maat — altijd raak.</p>
-        </div>
-        <div class="card reveal d1">
-            <div class="icon-box icon-box-light">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <h3 style="font-family:var(--serif);font-size:21px;font-weight:600;margin-bottom:10px;">Medische expertise</h3>
-            <p style="font-size:14.5px;color:var(--gray);line-height:1.75;">Gecertificeerd voor diabetes, reuma en orthopedische aandoeningen. Lid van Stichting LOOP en KABIZ kwaliteitsregister.</p>
-        </div>
-        <div class="card reveal d2">
-            <div class="icon-box icon-box-light">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-            </div>
-            <h3 style="font-family:var(--serif);font-size:21px;font-weight:600;margin-bottom:10px;">Persoonlijk advies</h3>
-            <p style="font-size:14.5px;color:var(--gray);line-height:1.75;">Onze specialisten nemen de tijd voor jou. Ons 5-stappen adviesproces garandeert de perfecte schoen.</p>
-        </div>
-        <div class="card reveal d3">
-            <div class="icon-box icon-box-light">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            </div>
-            <h3 style="font-family:var(--serif);font-size:21px;font-weight:600;margin-bottom:10px;">Alles onder één dak</h3>
-            <p style="font-size:14.5px;color:var(--gray);line-height:1.75;">Schoenen, pedicure, podoloog en voetscan in één winkel in Winkelcentrum Vaartbroek, Eindhoven.</p>
-        </div>
-    </div>
-</section>
-
-<!-- ─── PROCESS (DESIRE) ─── -->
-<section id="process" class="section">
-    <div class="process-header reveal">
-        <div class="sec-label">Onze aanpak</div>
-        <h2 class="sec-title">De perfecte schoen in 5 stappen</h2>
-        <p class="sec-sub">Geen raden, geen compromissen. Ons bewezen adviesproces zorgt dat jij altijd met de juiste schoen naar buiten stapt.</p>
-    </div>
-    <div class="steps">
-        <div class="step reveal"><div class="step-num">1</div><div class="step-title">Gesprek</div><p class="step-desc">We bespreken jouw wensen, activiteiten en eventuele klachten.</p></div>
-        <div class="step reveal d1"><div class="step-num">2</div><div class="step-title">Voetmeting</div><p class="step-desc">Gratis professionele meting van lengte, breedte en voettype.</p></div>
-        <div class="step reveal d2"><div class="step-num">3</div><div class="step-title">Selectie</div><p class="step-desc">We selecteren de beste opties uit 22 merken, speciaal voor jou.</p></div>
-        <div class="step reveal d3"><div class="step-num">4</div><div class="step-title">Passen</div><p class="step-desc">Uitgebreid passen en lopen — de pasvorm voelt je meteen.</p></div>
-        <div class="step reveal d4"><div class="step-num">5</div><div class="step-title">Nazorg</div><p class="step-desc">Onderhoudadvies en nazorg voor de langste levensduur.</p></div>
-    </div>
-</section>
 
 <!-- ─── CTA (ACTION) ─── -->
 <div class="cta-strip">

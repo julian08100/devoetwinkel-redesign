@@ -4,10 +4,34 @@
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Gratis voetscandag bij De Voetwinkel Eindhoven. Nieuwe datum: donderdag 20 augustus 2026. Kom langs voor een gratis professionele voetmeting.">
     <title>Gratis Voetscandag — De Voetwinkel Eindhoven</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='50' fill='%231A3329'/><text x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Georgia,serif' font-style='italic' font-weight='bold'>V</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='50' fill='%2316130F'/><text x='50' y='72' font-size='60' text-anchor='middle' fill='white' font-family='Georgia,serif' font-style='italic' font-weight='bold'>V</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Consent Mode: alles standaard geweigerd tot de bezoeker toestemming geeft -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied',
+        'functionality_storage': 'granted',
+        'security_storage': 'granted',
+        'wait_for_update': 500
+      });
+      try {
+        if (localStorage.getItem('dvw-cookie-v2') === '1') {
+          gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted',
+            'analytics_storage': 'granted'
+          });
+        }
+      } catch (e) {}
+    </script>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PNNGPJ2');</script>
     <!-- End Google Tag Manager -->
@@ -91,8 +115,8 @@
                 </div>
             </div>
 
-            <div style="margin-top:32px;padding:20px 24px;background:var(--green-pale);border-radius:var(--r);border-left:3px solid var(--green-deep);">
-                <p style="font-size:15px;color:var(--green-deep);line-height:1.7;"><strong>Let op:</strong> De voetscandag werkt op afspraak. Bel 040-8446452 of mail info@devoetwinkel.nl om uw tijdslot te reserveren.</p>
+            <div style="margin-top:32px;padding:20px 24px;background:var(--sand);border-radius:var(--r);border-left:3px solid var(--ink);">
+                <p style="font-size:15px;color:var(--ink);line-height:1.7;"><strong>Let op:</strong> De voetscandag werkt op afspraak. Bel 040-8446452 of mail info@devoetwinkel.nl om uw tijdslot te reserveren.</p>
             </div>
         </div>
 
