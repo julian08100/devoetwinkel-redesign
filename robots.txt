@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Tijdelijk offline, geen nieuwe collectiefoto's
+Disallow: /schneider.html
+Disallow: /verhulst.html
+
+Sitemap: https://devoetwinkel.nl/sitemap.xml
