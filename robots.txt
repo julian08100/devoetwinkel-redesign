@@ -1,7 +1,103 @@
+# De Voetwinkel Eindhoven
+
 User-agent: *
 Allow: /
 
 # Tijdelijk offline, geen nieuwe collectiefoto's
+Disallow: /schneider.html
+Disallow: /verhulst.html
+
+# AI-assistenten mogen deze site lezen en citeren.
+# De inhoud is openbaar; we willen juist genoemd worden bij vragen
+# over comfortschoenen, pedicure en podologie in Eindhoven.
+
+User-agent: GPTBot
+Allow: /
+Disallow: /schneider.html
+Disallow: /verhulst.html
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /schneider.html
+Disallow: /verhulst.html
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /schneider.html
+Disallow: /verhulst.html
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /schneider.html
+Disallow: /verhulst.html
+
+User-agent: Claude-User
+Allow: /
+Disallow: /schneider.html
+Disallow: /verhulst.html
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /schneider.html
+Disallow: /verhulst.html
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /schneider.html
+Disallow: /verhulst.html
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /schneider.html
+Disallow: /verhulst.html
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /schneider.html
+Disallow: /verhulst.html
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /schneider.html
+Disallow: /verhulst.html
+
+User-agent: Bingbot
+Allow: /
+Disallow: /schneider.html
+Disallow: /verhulst.html
+
+User-agent: CCBot
+Allow: /
+Disallow: /schneider.html
+Disallow: /verhulst.html
+
+User-agent: Meta-ExternalAgent
+Allow: /
+Disallow: /schneider.html
+Disallow: /verhulst.html
+
+User-agent: Amazonbot
+Allow: /
+Disallow: /schneider.html
+Disallow: /verhulst.html
+
+User-agent: cohere-ai
+Allow: /
+Disallow: /schneider.html
+Disallow: /verhulst.html
+
+User-agent: DuckAssistBot
+Allow: /
+Disallow: /schneider.html
+Disallow: /verhulst.html
+
+User-agent: MistralAI-User
+Allow: /
+Disallow: /schneider.html
+Disallow: /verhulst.html
+
+User-agent: YouBot
+Allow: /
 Disallow: /schneider.html
 Disallow: /verhulst.html
 
