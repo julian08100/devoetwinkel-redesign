@@ -77,6 +77,8 @@ document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
             'ad_personalization': stand,
             'analytics_storage': stand
         });
+        // Pas na toestemming worden GTM en ContentSquare überhaupt opgehaald.
+        if (toegestaan && typeof window.dvwLaadTags === 'function') window.dvwLaadTags();
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({ event: toegestaan ? 'cookie_accepted' : 'cookie_declined' });
     };

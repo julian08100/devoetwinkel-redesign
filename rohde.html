@@ -8,7 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- Consent Mode: alles standaard geweigerd tot de bezoeker toestemming geeft -->
+    <!-- Toestemming eerst: GTM en alle tags die eruit komen (GA4, Google Ads,
+         AppNexus, Media Group Holland) laden pas nadat de bezoeker accepteert.
+         Weigert iemand, dan wordt er niets van buiten opgehaald. -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){ dataLayer.push(arguments); }
@@ -18,23 +20,29 @@
         'ad_personalization': 'denied',
         'analytics_storage': 'denied',
         'functionality_storage': 'granted',
-        'security_storage': 'granted',
-        'wait_for_update': 500
+        'security_storage': 'granted'
       });
+      window.dvwLaadTags = function () {
+        if (window.dvwTagsGeladen) return;
+        window.dvwTagsGeladen = true;
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+         var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+         j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+         f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PNNGPJ2');
+        var cs = document.createElement('script');
+        cs.async = 1; cs.src = 'https://t.contentsquare.net/uxa/8c97f5ee65968.js';
+        document.head.appendChild(cs);
+      };
       try {
-        if (localStorage.getItem('dvw-cookie-v2') === '1') {
-          gtag('consent', 'update', {
-            'ad_storage': 'granted',
-            'ad_user_data': 'granted',
-            'ad_personalization': 'granted',
-            'analytics_storage': 'granted'
-          });
-        }
+        if (localStorage.getItem('dvw-cookie-v2') === '1') window.dvwLaadTags();
       } catch (e) {}
     </script>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PNNGPJ2');</script>
-    <!-- End Google Tag Manager -->
     <link rel="canonical" href="https://devoetwinkel.nl/rohde.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="De Voetwinkel Eindhoven">
@@ -61,12 +69,8 @@
       ] }
     </script>
     <link rel="stylesheet" href="style.css">
-    <script>(function(){if(localStorage.getItem('cs-consent')=='accepted'){var s=document.createElement('script');s.async=1;s.src='https://t.contentsquare.net/uxa/8c97f5ee65968.js';document.head.appendChild(s);}})();</script>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNNGPJ2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 <nav id="nav" class="solid">
     <a href="index.html" class="nav-logo"><img src="images/2024/03/devoetwinkel-1.png" alt="De Voetwinkel" class="nav-logo-img"></a>
     <ul class="nav-links">

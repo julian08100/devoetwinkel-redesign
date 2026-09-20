@@ -9,7 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- Consent Mode: alles standaard geweigerd tot de bezoeker toestemming geeft -->
+    <!-- Toestemming eerst: GTM en alle tags die eruit komen (GA4, Google Ads,
+         AppNexus, Media Group Holland) laden pas nadat de bezoeker accepteert.
+         Weigert iemand, dan wordt er niets van buiten opgehaald. -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){ dataLayer.push(arguments); }
@@ -19,23 +21,29 @@
         'ad_personalization': 'denied',
         'analytics_storage': 'denied',
         'functionality_storage': 'granted',
-        'security_storage': 'granted',
-        'wait_for_update': 500
+        'security_storage': 'granted'
       });
+      window.dvwLaadTags = function () {
+        if (window.dvwTagsGeladen) return;
+        window.dvwTagsGeladen = true;
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+         var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+         j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+         f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PNNGPJ2');
+        var cs = document.createElement('script');
+        cs.async = 1; cs.src = 'https://t.contentsquare.net/uxa/8c97f5ee65968.js';
+        document.head.appendChild(cs);
+      };
       try {
-        if (localStorage.getItem('dvw-cookie-v2') === '1') {
-          gtag('consent', 'update', {
-            'ad_storage': 'granted',
-            'ad_user_data': 'granted',
-            'ad_personalization': 'granted',
-            'analytics_storage': 'granted'
-          });
-        }
+        if (localStorage.getItem('dvw-cookie-v2') === '1') window.dvwLaadTags();
       } catch (e) {}
     </script>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PNNGPJ2');</script>
-    <!-- End Google Tag Manager -->
     <link rel="canonical" href="https://devoetwinkel.nl/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="De Voetwinkel Eindhoven">
@@ -294,12 +302,8 @@
             .pedicure-overlay { padding: 0 28px; }
         }
     </style>
-    <script>(function(){if(localStorage.getItem('cs-consent')=='accepted'){var s=document.createElement('script');s.async=1;s.src='https://t.contentsquare.net/uxa/8c97f5ee65968.js';document.head.appendChild(s);}})();</script>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNNGPJ2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
 <!-- ─── NAV ─── -->
 <nav id="nav">
@@ -643,25 +647,5 @@
 </footer>
 <script src="main.js"></script>
 
-<!-- Cookie consent banner -->
-<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:99999;background:#1A3329;color:#fff;padding:16px 52px;font-family:'Inter',sans-serif;font-size:14px;line-height:1.5;box-shadow:0 -2px 20px rgba(0,0,0,0.2);">
-  <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:16px;">
-    <p style="flex:1;margin:0;min-width:240px;color:rgba(255,255,255,0.8);">We gebruiken analytische cookies (ContentSquare) om onze website te verbeteren. <a href="privacy-policy.html" style="color:#c4704a;font-weight:600;">Privacybeleid</a></p>
-    <div style="display:flex;gap:8px;flex-shrink:0;">
-      <button onclick="acceptCS()" style="background:#c4704a;color:#fff;border:none;padding:10px 22px;border-radius:8px;cursor:pointer;font-weight:600;font-size:13px;font-family:inherit;">Accepteren</button>
-      <button onclick="declineCS()" style="background:transparent;color:rgba(255,255,255,0.65);border:1px solid rgba(255,255,255,0.25);padding:10px 22px;border-radius:8px;cursor:pointer;font-size:13px;font-family:inherit;">Weigeren</button>
-    </div>
-  </div>
-</div>
-<script>
-(function(){
-  var banner=document.getElementById('cookie-banner');
-  var c=localStorage.getItem('cs-consent');
-  if(!c) banner.style.display='block';
-  else if(c==='accepted'){var s=document.createElement('script');s.async=1;s.src='https://t.contentsquare.net/uxa/8c97f5ee65968.js';document.head.appendChild(s);}
-})();
-function acceptCS(){localStorage.setItem('cs-consent','accepted');document.getElementById('cookie-banner').style.display='none';var s=document.createElement('script');s.async=1;s.src='https://t.contentsquare.net/uxa/8c97f5ee65968.js';document.head.appendChild(s);}
-function declineCS(){localStorage.setItem('cs-consent','declined');document.getElementById('cookie-banner').style.display='none';}
-</script>
 </body>
 </html>
