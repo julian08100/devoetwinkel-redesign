@@ -573,7 +573,7 @@ nav.solid { background: var(--cream); box-shadow: 0 1px 0 rgba(0,0,0,0.07); }
 
 /* ── FOOTER ── */
 footer {
-    background: #0D1F18; color: var(--white);
+    background: var(--ink); color: var(--white);
     padding: 80px 52px 40px;
 }
 .footer-grid {
@@ -663,8 +663,11 @@ footer {
 }
 .scandag-close:hover { color: var(--white); }
 @media (max-width: 600px) {
-    .scandag-inner { padding: 12px 20px; gap: 12px; }
-    .scandag-text span { display: none; }
+    .scandag-inner { padding: 12px 20px; gap: 10px 12px; display: grid; grid-template-columns: 22px 1fr 28px; align-items: start; }
+    .scandag-text { grid-column: 2; }
+    .scandag-text span { display: block; margin-left: 0; font-size: 12px; }
+    .scandag-cta { grid-column: 2; justify-self: start; }
+    .scandag-close { grid-column: 3; grid-row: 1; }
 }
 
 /* ── RESPONSIVE ── */
