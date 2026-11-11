@@ -44,8 +44,7 @@ document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 // Keep dates chronological; past events disappear after their day in the Netherlands.
 (function () {
     const events = [
-        { date: '2026-10-15', label: 'donderdag 15 oktober 2026' },
-        { date: '2026-11-19', label: 'donderdag 19 november 2026' }
+        { date: '2027-01-21', label: 'donderdag 21 januari 2027' }
     ];
     const today = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Amsterdam' }).format(new Date());
     const upcoming = events.filter(event => event.date >= today);
